@@ -1,17 +1,21 @@
 <template>
-  <div :class="Platform.is.mobile ? 'window-height column bg-dark text-grey-2 q-pa-md' : 'column bg-dark text-grey-2'">
+  <div :class="Platform.is.mobile ? 'column bg-dark text-grey-2 q-pa-md' : 'column bg-dark text-grey-2'">
 
     <span :class="Platform.is.mobile ? 'q-my-lg text-weight-bolder text-accent text-h2 q-my-xl' : 'self-center text-h1 text-weight-bolder text-accent q-my-xl'">Projects</span>
 
     <div :class="Platform.is.mobile ? 'column q-gutter-y-md' : 'row'">
       <div :class="Platform.is.mobile ? 'column q-gutter-y-md' : 'col column q-px-xl q-gutter-y-md'">
         <span class="text-h4 text-weight-bold">Todo List App</span>
-        <q-input v-model="newList" @keyup.enter="addNewList" class="bg-accent text-dark rounded-borders" standout="bg-accent text-white" label-color="dark" color="white" label="Add new list" dense />
+        <q-input v-model="newList" @keyup.enter="addNewList" class="bg-accent text-dark rounded-borders" standout="bg-accent text-white" label-color="dark" color="white" label="Add new list" dense >
+          <template v-slot:after>
+            <q-icon name="mdi-send" class="q-mr-sm" @click="addNewList" />
+          </template>
+        </q-input>
         <q-list bordered separator v-if="lists.length !== 0">
           <q-virtual-scroll
             :items="lists"
             v-slot="{ item, index }"
-            style="height: calc(100vh - 350px)"
+            style="max-height: calc(100vh - 350px)"
           >
             <q-item v-ripple :key="index" class="bg-accent text-dark">
               <q-item-section>
@@ -27,7 +31,6 @@
           </q-virtual-scroll>
         </q-list>
       </div>
-
 
       <div :class="Platform.is.mobile ? 'column q-gutter-y-md' : 'col column q-px-xl q-gutter-y-md'">
         <span class="text-h4 text-weight-bold">QR Code Generator</span>

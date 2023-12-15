@@ -1,5 +1,5 @@
 <template>
-  <div class="window-height column justify-center text-grey-2 bg-dark">
+  <div :class="Platform.is.mobile ? 'column justify-center bg-dark text-grey-2' : 'window-height column justify-center text-grey-2 bg-dark'">
 
     <span :class="Platform.is.mobile ? 'q-my-lg text-weight-bolder text-accent text-h2' : 'self-center text-h1 text-weight-bolder text-accent q-my-xl'">Contact</span>
 
