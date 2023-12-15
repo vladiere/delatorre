@@ -1,35 +1,40 @@
 <template>
-  <div class="window-height column justify-center bg-dark text-grey-2 q-gutter-y-xl">
+  <div :class="Platform.is.mobile ? 'window-height column justify-center bg-dark text-grey-2 q-gutter-y-md q-pa-md' : 'window-height column justify-center bg-dark text-grey-2 q-gutter-y-xl'">
 
     <span class="q-ml-xl text-h3 text-weight-bolder text-grey-2">My Skills</span>
 
-    <div class="row justify-center q-gutter-lg q-pa-lg">
-      <div class="col-5 column q-gutter-y-sm">
+    <div :class="Platform.is.mobile ? 'column q-gutter-y-md justify-center' : 'row justify-center q-gutter-lg q-pa-lg'">
+
+      <div :class="Platform.is.mobile ? 'column q-gutter-y-sm' : 'col-5 column q-gutter-y-sm'">
         <span class="text-h5 text-accent text-weight-bold">TypeScript</span>
         <q-linear-progress rounded size="15px" :value="0.58" track-color="grey-1" color="accent" class="q-mt-sm" />
       </div>
-      <div class="col-5 column q-gutter-y-sm">
+
+      <div :class="Platform.is.mobile ? 'column q-gutter-y-sm' : 'col-5 column q-gutter-y-sm'">
         <div class="row justify-between">
           <span class="text-h5 text-accent text-weight-bold">JavaScript</span>
           <span class="text-h5 text-accent text-weight-bold">78%</span>
         </div>
         <q-linear-progress rounded size="15px" :value="0.78" track-color="grey-1" color="accent" class="q-mt-sm" />
       </div>
-      <div class="col-5 column q-gutter-y-sm">
+
+      <div :class="Platform.is.mobile ? 'column q-gutter-y-sm' : 'col-5 column q-gutter-y-sm'">
         <div class="row justify-between">
           <span class="text-h5 text-accent text-weight-bold">HTML-5</span>
           <span class="text-h5 text-accent text-weight-bold">88%</span>
         </div>
         <q-linear-progress rounded size="15px" :value="0.88" track-color="grey-1" color="accent" class="q-mt-sm" />
       </div>
-      <div class="col-5 column q-gutter-y-sm">
+
+      <div :class="Platform.is.mobile ? 'column q-gutter-y-sm' : 'col-5 column q-gutter-y-sm'">
         <div class="row justify-between">
           <span class="text-h5 text-accent text-weight-bold">CSS3</span>
           <span class="text-h5 text-accent text-weight-bold">67%</span>
         </div>
         <q-linear-progress rounded size="15px" :value="0.67" track-color="grey-1" color="accent" class="q-mt-sm" />
       </div>
-      <div class="col-5 column q-gutter-y-sm">
+
+      <div :class="Platform.is.mobile ? 'column q-gutter-y-sm' : 'col-5 column q-gutter-y-sm'">
         <div class="row justify-between">
           <span class="text-h5 text-accent text-weight-bold">VUEjs</span>
           <span class="text-h5 text-accent text-weight-bold">88%</span>
@@ -43,6 +48,7 @@
 </template>
 
 <script setup>
+import { Platform } from 'quasar';
 
 const emits = defineEmits(['wantAScroll']);
 

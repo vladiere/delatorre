@@ -1,11 +1,11 @@
 <template>
   <q-page class="column">
-    <div class="window-height column justify-center q-gutter-y-md bg-dark q-pl-xl">
+    <div :class="Platform.is.mobile ? 'window-height column justify-center q-gutter-y-md bg-dark q-pa-md' : 'window-height column justify-center q-gutter-y-md bg-dark q-pl-xl'">
       <span class="text-h5 text-accent">Hello! I am</span>
-      <span class="text-h1 text-grey-2 text-weight-bolder">John Patrick Delatorre</span>
+      <span :class="Platform.is.mobile ? 'text-h2 text-grey-2 text-weight-bolder' : 'text-h1 text-grey-2 text-weight-bolder'">John Patrick Delatorre</span>
       <div class="column">
         <span class="text-h5 text-weight-bolder text-accent">Front-end Developer</span>
-        <div class="row q-gutter-x-md text-grey-2">
+        <div :class="Platform.is.mobile ? 'row q-gutter-x-md text-subtitle1 text-grey-2' : 'row q-gutter-x-md text-grey-2'">
           <span class="text-h6 text-weight-regular">Front-end Developer</span>
           <div class="relative-position">
             <div class="bg-accent absolute-center" style="padding: 5px;border-radius:50%;"></div>
@@ -25,6 +25,7 @@
 
 <script setup>
 import { defineComponent, ref } from 'vue'
+import { Platform } from 'quasar';
 import AboutComponent from 'components/AboutComponent.vue';
 import SkillComponent from 'components/SkillComponent.vue';
 import ContactComponent from 'components/ContactComponent.vue';
