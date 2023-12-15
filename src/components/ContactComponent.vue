@@ -14,7 +14,7 @@
       <div class="col column q-gutter-y-md">
         <div class="column q-gutter-y-sm">
           <span class="text-h5 text-weight-bold">Email</span>
-          <span class="text-h6 text-weight-light"></span>
+          <span class="text-h6 text-weight-light">delatorrepatrick56@gmail.com</span>
         </div>
         <div class="column q-gutter-y-sm">
           <span class="text-h5 text-weight-bold">Address</span>

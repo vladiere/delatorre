@@ -1,7 +1,7 @@
 <template>
   <div :class="Platform.is.mobile ? 'window-height column justify-center bg-dark text-grey-2 q-gutter-y-md q-pa-md' : 'window-height column justify-center bg-dark text-grey-2 q-gutter-y-xl'">
 
-    <span class="q-ml-xl text-h3 text-weight-bolder text-grey-2">My Skills</span>
+    <span :class="Platform.is.mobile ? 'text-h3 text-weight-bolder text-grey-2' : 'q-ml-xl text-h3 text-weight-bolder text-grey-2'">My Skills</span>
 
     <div :class="Platform.is.mobile ? 'column q-gutter-y-md justify-center' : 'row justify-center q-gutter-lg q-pa-lg'">
 
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <q-btn outline color="accent" label="Contact" no-caps class="q-ml-xl self-start" size="xl" @click="scrollToComponent"/>
+    <q-btn outline color="accent" label="Contact" no-caps :class="Platform.is.mobile ? 'self-start' : 'q-ml-xl self-start'" size="xl" @click="scrollToComponent"/>
   </div>
 </template>
 
